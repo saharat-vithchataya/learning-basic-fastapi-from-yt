@@ -1,0 +1,18 @@
+from pydantic_settings import BaseSettings
+
+
+class Settings(BaseSettings):
+    database_hostname: str
+    database_port: str
+    database_username: str
+    database_password: str
+    database_name: str
+    secret_key: str
+    algorithms: str
+    access_token_expire_minues: int = 30
+
+    class Config:
+        env_file = "app/.env"
+
+
+settings = Settings()
